@@ -8,11 +8,11 @@ export class Scholarship{
      InstituteName?:string;
      PresentCourse ?:string;
      PresentCourseYear ?:number;
-     MadeStudy ?:string;
+     ModeStudy ?:string;
      StartDate ?:string;
      UniversityName ?:string;
-      PreviousCourse ?:string;
- PreviousPassingYear ?:number;
+      PreviousCourse?:string;
+     PreviousPassingYear?:number;
      AcademicPercentage ?:number;
     TwelvethRollNumber?:string;
      TwelvethBoardName?:string;
@@ -20,11 +20,14 @@ export class Scholarship{
      TwelvethPercentage ?:number;
      TenthRollNumber ?:string;
      TenthBoardName ?:string;
-     TenthPassingYear  ?:number;
+     TenthPassingYear ?:number;
      Percentage  ?:number;
+	 Tutuionfee ?:number;
+	 Otherfee ?:number;
+	  Admissionfee?:number;
      IsDisabled ?:boolean;
-     TypeDisability ?:string;
-     PercentageDisability ?:number;
+     TypeDisability?:string;
+     PercentageDisability?:number;
      MaritalStatus ?:string;
      StateId ?:number;
      DistrictId ?:number;
@@ -32,7 +35,12 @@ export class Scholarship{
      HouseNumber ?:number;
      StreetNumber ?:number;
      Pincode ?:string;
-     ScholarshipType ?:string;
+     
+	  Scheme ?:string;
+	  Institutestatus ?:string;
+	  Stateofficerstatus ?:string;
+	  Ministryofficerstatus ?:string;
+	  
 
 
 }

@@ -1,0 +1,21 @@
+.one{
+    text-align:start;
+    padding:2cm;
+    margin: 15mm;
+    border: 1cm;
+    border-width:1mm;
+    
+    border-color: black;
+    border: radius 1px;
+    border-style:solid;
+    margin-inline-start: 1cm;
+    background-color:lightgray;
+    
+}
+.oneline{
+    float:middle;
+}
+h1{
+    text-align: center;
+    text-decoration: solid;
+}

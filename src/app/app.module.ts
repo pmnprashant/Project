@@ -7,10 +7,17 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ScholarshipService } from './Service/scholarship.service';
-
+import { StateService } from './Service/state.service';
+import { StatenodalofficerComponent } from './statenodalofficer/statenodalofficer.component';
+import { ViewService } from './Service/nodal.service'; 
+import { NodalofficerforinstituteComponent } from './nodalofficerforinstitute/nodalofficerforinstitute.component';
+import { InstituteService } from './Service/institute.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatenodalofficerComponent,
+    NodalofficerforinstituteComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -19,7 +26,7 @@ import { ScholarshipService } from './Service/scholarship.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ScholarshipService],
+  providers: [ScholarshipService,StateService,ViewService,InstituteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,7 +11,7 @@ export class ScholarshipService
 
     }
   //.net core prjwebapi1 url
-    readonly uri="http://localhost:50685/api/Scholarships";
+    readonly uri="http://localhost:55936/api/Scholarships";
 
   
 
@@ -23,4 +23,5 @@ export class ScholarshipService
     
        return this.http.post(this.uri,cat,{responseType: 'text'})
     }
+    
 }

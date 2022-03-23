@@ -1,0 +1,22 @@
+<table class="table" >
+    <thead> 
+        <tr>
+            <th>InstituteCode</th>
+            <th>InstituteName</th>
+            <th>PrincipalName</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let c of instituteinfo">
+        <tr>
+            <td>{{c.institutecode}}</td>
+            <td>{{c.instituteName}}</td>
+            <td>{{c.institutetype}}</td>
+            <td>{{c.location}}</td>
+            <td>{{c.Principalname}}</td>
+            <td>{{c.statofficerstatus}}</td>
+            <td><button class="btn btn-success" (click)="Approve(c.InstituteCode)">Approve</button></td>
+            <td><button class="btn btn-danger" (click)="Reject(c.InstituteCode)">Reject</button></td>
+        </tr>
+    </tbody>
+  </table>

@@ -1,12 +1,14 @@
 <h1>Scholarship Application Form</h1>
 <div>
-  <form [formGroup]="application">
+  <form [formGroup]= "application" class="one">
     <h4>BASIC DETAILS</h4>
     AADHAR NUMBER
     <input type="text" name="anumber" formControlName="anumber" /> 
     <div *ngIf="anumber && anumber.invalid && anumber.touched">anumber is required</div>&nbsp;
     <label>Religion</label>
-    <select class="form-control dropdown" id="religion" name="religion">
+    <select class="oneline" id="religion" name="religion"  formControlName="religion" >
+      
+   
     
       <option value="" selected="selected" disabled="disabled">
         -- select one --
@@ -40,7 +42,7 @@
       <option value="Zoroastrianism">Zoroastrianism</option>
       <option value="primal-indigenous">primal-indigenous</option>
       <option value="Other">Other</option></select
-    ><br /><br />
+    > <div *ngIf="religion && religion.invalid && religion.touched">religion is required</div><br /><br />
 
     <span
       >COMMUNITY/CATEGORY<input
@@ -76,19 +78,21 @@
         formControlName="presentcourse"
       /><div *ngIf="presentcourse && presentcourse.invalid && presentcourse.touched">presentcourse is required</div><br /><br />
       PRESENT CLASS/COURSE YEAR<input
-        type="number"
+      type="date"
+      placeholder="dd/mm/yyyy"
         name="presentcourseyear"
         formControlName="presentcourseyear"
       /><div *ngIf="presentcourseyear && presentcourseyear.invalid && presentcourseyear.touched">presentcourseyear is required</div>
       &nbsp;&nbsp;
       <label>MODE OF STUDY </label
-      ><select class="form-control dropdown" id="mode" name="mode">
+      ><select class="oneline" id="mode" name="mode" formControlName="mode">
+        
         <option value="" selected="selected" disabled="disabled">
           Select the Mode
         </option>
         <option value="Online">Online</option>
         <option value="Offline">Offline</option>
-      </select>
+      </select><div *ngIf="mode && mode.invalid && mode.touched">mode is required</div>
     </div>
     <br /><br />
 
@@ -105,19 +109,26 @@
     PREVIOUS CLASS/COURSE<input type="text" name="previouscourse" formControlName="previouscourse" />
     <div *ngIf="previouscourse && previouscourse.invalid && previouscourse.touched">previouscourse is required</div>
     &nbsp;&nbsp;&nbsp;PREVIOUS PASSING
-    YEAR<input type="number" name="previouspassingyear" formControlName="previouspassingyear"/>
+    YEAR<input
+      type="date"
+      placeholder="dd/mm/yyyy" name="previouspassingyear" formControlName="previouspassingyear"/>
     <div *ngIf="previouspassingyear && previouspassingyear.invalid && previouspassingyear.touched">previouspassingyearis required</div>
     &nbsp;&nbsp; PREVIOUS CLASS%<input
       type="number" name="previouspercentage" formControlName="previouspercentage"
     /><div *ngIf="previouspercentage && previouspercentage.invalid && previouspercentage.touched">previouspercentageis required</div>
     <br /><br />
     <h4>10TH CLASS</h4>
+    ROLL NUMBER<input type="number" name="rnumber" formControlName="rnumber" />
+    <div *ngIf="rnumber && rnumber.invalid && rnumber.touched">rnumber is required</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     
     BOARD NAME<input
       type="text" name="bname" formControlName="bname"
     /> <div *ngIf="bname && bname.invalid && bname.touched">bname is required</div>
     <br /><br />
-    PASSING YEAR<input type="number" name="pyear" formControlName="pyear" />
+    PASSING YEAR<input
+    type="date"
+    placeholder="dd/mm/yyyy" name="pyear" formControlName="pyear" />
     <div *ngIf="pyear && pyear.invalid && pyear.touched">pyear is required</div>
     &nbsp;&nbsp;&nbsp;&nbsp;% OBTAINED<input
       type="number" name="sscpercentage" formControlName="sscpercentage"
@@ -129,89 +140,127 @@
       type="text" name="hbname" formControlName="hbname"
     /><div *ngIf="hbname && hbname.invalid && hbname.touched">hbname is required</div>
     <br /><br />
-    PASSING YEAR<input type="number" name="hpassingyear" formControlName="hpassingyear" />
+    PASSING YEAR<input
+    type="date"
+    placeholder="dd/mm/yyyy" name="hpassingyear" formControlName="hpassingyear" />
     <div *ngIf="hpassingyear && hpassingyear.invalid && hpassingyear.touched">hpassingyearis required</div>
     &nbsp;&nbsp;&nbsp;&nbsp;% OBTAINED<input
       type="number" name="hscpercentage" formControlName="hscpercentage"
     /> <div *ngIf="hscpercentage && hscpercentage.invalid && hscpercentage.touched">hscpercentage is required</div><br /><br />
+    <h4>FEE DETAILS</h4>
+    ADMISSION FEE<input type="number" name="admissionfees" formControlName="admissionfees"/>
+    <div *ngIf="admissionfees && admissionfees.invalid && admissionfees.touched">admissionfeesis required</div>
     
+    &nbsp;&nbsp;TUTUION FEE<input
+      type="number" name="tutuionfees" formControlName="tutuionfees"
+    /><div *ngIf="tutuionfees && tutuionfees.invalid && tutuionfees.touched">tutuionfeesis required</div>
+    
+    &nbsp;&nbsp;OTHER FEE<input type="number" name="otherfees" formControlName="otherfees" />
+    <div *ngIf="otherfees && otherfees.invalid && otherfees.touched">otherfees is required</div>
+    <br /><br />
+	ROLL NUMBER<input type="number" name="rnumber" formControlName="rnumber" />
+    <div *ngIf="rnumber && rnumber.invalid && rnumber.touched">rnumber is required</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <label>IS DISABLED</label>
-    <select class="form-control dropdown" id="disable" name="disable">
+    <select class="oneline" id="disable" name="disable" formControlName="disable">
+      
       <option value="" selected="selected" disabled="disabled">
         select option
       </option>
       <option value="YES">YES</option>
       <option value="NO">NO</option></select
-    >&nbsp;&nbsp;&nbsp;&nbsp;TYPE OF DISABILITY<input type="text" name="typeofdisable" formControlName="typeofdisable" />
+    >
+    <div *ngIf="disable && disable.invalid && disable.touched">disable is required</div>&nbsp;&nbsp;&nbsp;&nbsp;TYPE OF DISABILITY<input type="text"  name="typeofdisable" formControlName="typeofdisable"/>
     <div *ngIf="typeofdisable && typeofdisable.invalid && typeofdisable.touched">typeofdisable is required</div>
     <br /><br />
     % OF DISABILITY<input type="number" name="percentageofdisable" formControlName="percentageofdisable"/>
     <div *ngIf="percentageofdisable && percentageofdisable.invalid && percentageofdisable.touched">percentageofdisable is required</div>
     &nbsp;&nbsp;&nbsp;&nbsp;MARITAL
-    STATUS<select>
+    STATUS<select class="oneline" id="status" name="status" formControlName="status" >
+     
       <option value="" selected="selected" disabled="disabled">
         select option
       </option>
       <option value="SINGLE">SINGLE</option>
       <option value="MARRIED">MARRIED</option></select
-    ><br /><br />
+    > <div *ngIf="status && status.invalid && status.touched">status is required</div><br /><br />
     PARENT PROFESSION<input type="text" name="profession" formControlName="profession" />
     <div *ngIf="profession && profession.invalid && profession.touched">profession is required</div>
 
     <h3>CONTACT DETAILS</h3>
-    <label>STATE</label><select>
-      <option value="" selected="selected" disabled="disabled">
-        select option
-      </option><option value ="select STATE">select STATE</option>
-    <option value ="MAHARASHTRA">MAHARASHTRA</option></select>&nbsp;&nbsp;
-    <label>DISTRICT</label><select>
-      <option value="" selected="selected" disabled="disabled">
-        select option
-      </option>
-      <option value ="select DISTRICT">select DISTRICT</option>
-    <option value ="MUMBAI">MUMBAI</option></select>&nbsp;&nbsp;
-    <label>TALUKA</label><select>
-      <option value="" selected="selected" disabled="disabled">
-        select option
-      </option>
-      <option value ="select TALUKA">select TALUKA</option>
-    <option value ="ANDHERI">ANDHERI</option></select><br><br>
-    <label>HOUSE NUMBER</label><input type="text" name="house" formControlName="house" />
+   
+     
+      <div class="form-group">
+        STATE:<select formControlName="state" (change)="onChangeState($event)">
+                <option value="">Select state</option>
+                <option *ngFor="let state of stateinfo" [value]="state.stateId">{{state.stateName}}</option>
+              </select>
+
+    <div *ngIf="state && state.invalid && state.touched">state is required</div> &nbsp;&nbsp;
+   
+     
+      DISTRICT: 
+                    <select formControlName="district">
+                        <option value="">Select District</option>
+                        <option *ngFor="let district of districtInfo" [value]="district.districtId">{{district.districtName}}</option>
+                      </select> <div *ngIf="district && district.invalid && district.touched">district is required</div>&nbsp;&nbsp;
+    <label>TALUKA</label><input type="text"  id="block" name="block" formControlName="block">
+      <div *ngIf="block && block.invalid && block.touched">block is required</div></div>
+      <br><br>
+    <label>HOUSE NUMBER</label><input type="number" name="house" formControlName="house" />
     <div *ngIf="house && house.invalid && house.touched">house is required</div>&nbsp;&nbsp;
     <label>STREET NUMBER</label><input type="text">&nbsp;&nbsp;
     <label>PINCODE</label><input type="number" name="pin" formControlName="pin">
     <div *ngIf="pin && pin.invalid && pin.touched">pin is required</div>
     &nbsp;&nbsp;<br><br>
-    <label>CHOOSE SCHEME APPLYING FOR</label><select>
+    <label>CHOOSE SCHEME APPLYING FOR</label><select class="oneline"  name="scheme" formControlName="scheme">
+    
       <option value="" selected="selected" disabled="disabled">
         select option
-      </option><option value ="select ONE">select ONE</option>
-    <option value ="EBC">EBC</option></select>&nbsp;&nbsp;<br><br>
+      
+    <option value ="postmatric" >Post Matric Scholarship</option>
+    <option value ="national" >National Merit Scholarship</option>
+    <option value ="central" >Central Scholarship Scheme</option></select >
+    <div *ngIf="scheme && scheme.invalid && scheme.touched">scheme is required</div>&nbsp;&nbsp;<br><br>
     <h4>DOCUMENT UPLOAD SECTION</h4>
     <label>DOMICILE CERTIFICATE</label>&nbsp;
-    <input type="file"><br><br>
-    <label>STUDENT PHOTOGRAPH</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file"  >
+    <br><br>
+    <label>STUDENT PHOTOGRAPH</label>
+   &nbsp;
+    <input type="file">
+    <br><br>
     <label>INSTITUTE ID CARD</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file">
+   <br><br>
     <label>CAST/INCOME CERTIFICATE</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+   <br><br>
     <label>PREVIOUS YEAR MARKSHEET</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+    <br><br>
     <label>FEE RECIPT OF CURRENT YEAR</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+<br><br>
     <label>BANK PASSPORT(FRONT PAGE)</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+<br><br>
     <label>ADHAR CARD</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+<br><br>
     <label>10TH CLASS MARKSHEET</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file" >
+<br><br>
     <label>12TH CLASS MARKSHEET</label>&nbsp;
-    <input type="file"><br><br>
+    <input type="file">
+   <br><br>
 
-   <button type="submit" (click)=" addscholarship()" >submit form</button>
+   <button type="submit"  [disabled]="!application.valid" (click)="addscholarship()">submit form</button>&nbsp;&nbsp;
+   <button type="reset" (click)=" resetscholarship()" >Reset form</button>&nbsp;&nbsp;
    
     
   </form>
  
 </div>
+<app-statenodalofficer></app-statenodalofficer>
+<app-nodalofficerforinstitute></app-nodalofficerforinstitute>
